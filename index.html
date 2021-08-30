@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To do list</title>
+</head>
+<body onload="load()">
+
+    <div id="loading">
+        <div id="cube">
+            <div class="one face"></div>
+            <div class="two face"></div>
+            <div class="three face"></div>
+            <div class="four face"></div>
+            <div class="five face"></div>
+            <div class="six face"></div>
+        </div>
+    </div>
+
+    <i class="fas fa-clipboard-list"></i>
+    <div class="container">
+        <input type="text" id="ifld" placeholder="Enter here..!" required>
+        <button type="submit" id="sbt"><i class="fas fa-plus-square"></i></button>
+    </div>
+    <ul class="text">
+        <!-- <div class="values">
+            <li class="font">
+                
+            </li>
+            <button><i class="fas fa-minus-square"></i></button>
+        </div> -->
+    </ul>
+    <div id="remove">
+        <button onclick="Remove_All()">Remove&nbsp;All</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/187a3519f6.js" crossorigin="anonymous"></script>
+</body>
+</html>

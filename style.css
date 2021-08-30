@@ -1,0 +1,298 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    padding: 3% 2%;
+    margin: 0%;
+    background-color: rgb(5, 148, 60);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&family=Vollkorn:ital@1&display=swap');
+
+::-webkit-scrollbar-corner{
+    background-color: transparent;
+    display: none;
+}
+::-webkit-scrollbar{
+    background-color:transparent;
+    border-radius: 20px;
+    width: 0.7vw;
+    padding: 1%;
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
+    border-radius: 50px;
+    border: 1.5px solid black;
+    border-right: none;
+}
+
+#loading{
+    height: 300%; 
+    position: absolute; 
+    width: 100%; 
+    background-color: aliceblue;
+    color: black; 
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 500%;
+    font-weight: bold;
+    z-index: 1000;
+}
+#cube{
+    top: 7.5%;
+    padding: 1%;
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 000px;
+    animation: cub 2s ease 0ms infinite alternate;
+    transition: all 1s ease;
+}
+@keyframes cub {
+    0%{
+        transform: rotateX(25deg) rotateY(-25deg) translateX(1rem);
+    }
+    25%{
+        transform: rotateX(25deg) rotateZ(-25deg) translateY(1rem);
+    }
+    50%{
+        transform: rotateX(-25deg) rotateZ(-25deg) translateZ(1rem);
+    }
+    75%{
+        transform: rotateY(25deg) rotateZ(-25deg) translateX(-1rem);
+    }
+    100%{
+        transform: rotateY(180deg) rotateZ(45deg) translateY(-1rem);
+    }
+}
+
+.face{
+    height: 31.8%;
+    width: 31.8%;
+    position: absolute;
+}
+.one{
+    background-color: rgb(122, 35, 35);
+}
+.two{
+    background-color: royalblue;
+    transform: rotateY(90deg) translate3D(-3.45rem, 0rem, -3.45rem);
+}
+.three{
+    background-color: rgb(65, 225, 78);
+    transform: rotateY(90deg) translate3D(-3.45rem, 0rem, 3.45rem);
+}
+.four{
+    background-color: rgb(225, 65, 217);
+    transform: rotateY(0deg) translateZ(6.9rem);
+}
+.five{
+    background-color: rgb(225, 222, 65);
+    transform: rotateX(90deg) translate3D(0,3.45rem,-3.45rem);
+}
+.six{
+    background-color: rgb(65, 206, 225);
+    transform: rotateX(90deg) translate3D(0,3.45rem,3.45rem);
+}
+
+i{
+    font-size: 5rem;
+    animation: icon 2s ease-in-out 0.1s infinite alternate;
+    transform-origin: center;
+}
+@keyframes icon {
+    0%{
+        color: honeydew;;
+        transform: rotateY(45deg);
+    }
+    50%{
+        color: lightsalmon;
+        transform: rotateY(0deg);
+    }
+    100%{
+        color: coral;
+        transform: rotateY(180deg);
+    }
+}
+
+.container{
+    height: auto;
+    width: 38rem;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    padding: 2% 0%;
+    border-radius: 20px;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(241, 241, 237);
+}
+
+input{
+   background-color: transparent; 
+   padding: 1%;
+   margin: 2%;
+   width: 60%;
+   font-size: 1.3rem;
+   color: cornsilk;
+   font-weight: bold;
+   border: none;
+   border-bottom: 1px solid rgb(139, 136, 136);
+   font-family: 'Courier Prime', monospace;
+}
+input::placeholder{
+    font-size: 1.1rem;
+    color: rgb(197, 194, 12);
+    font-family: 'Vollkorn', serif;
+}
+input:focus{
+    outline: none;
+}
+
+.container i{
+    font-size: 2rem;
+    color: rgb(197, 194, 12);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    animation: none;
+}
+.container i:hover{
+    color: khaki;
+    transform: scale(0.9);
+}
+
+.container button{
+    background-color: transparent;
+    border: none;
+    padding: 1%;
+}
+
+.text{
+    height: auto;
+    width: 30rem;
+    margin-bottom: 1.8%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.text .values{
+    background-color: rgb(187, 137, 81);
+    display: inline-flex;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0.2% 1%;
+    border-radius: 10px;
+    margin: 1%;
+}
+.text .values .font{
+    font-family: 'Vollkorn', serif;
+    font-size: 1.8rem;
+    color: rgb(241, 241, 237);
+    margin-top: 0.5%;
+}
+.text .values button{
+    background-color: transparent;
+    border: none;
+    padding: 1%;
+}
+.text .values i{
+    color: rgb(224, 16, 16);
+    font-size: 2rem;
+    right: 0%;
+    transition: all 1s ease;
+    animation: none;
+}
+.text .values i:hover{
+    cursor: pointer;
+    color: crimson;
+    transform: scale(0.9);
+}
+
+#remove button{
+    background-color: transparent;
+    border: none;
+    padding: 10%;
+    background-color: crimson;
+    font-family: 'Vollkorn', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    color: wheat;
+    box-sizing: border-box;
+    box-shadow: -0.5px -0.5px 0.5px 0.5px rgb(241, 241, 237);
+    transition: all 0.5s ease;
+    /* visibility: hidden; */
+}
+#remove button:hover{
+    color: honeydew;
+    background-color: brown;
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 660px){
+    i{
+        font-size: 4rem;
+    }
+    .container{
+        width: 90%;
+        margin-right: auto;
+    }
+    .container i{
+        font-size: 1.6rem;
+    }
+    .text{
+        width: 70%;
+    }
+    .text .values .font{
+        font-size: 1.5rem;
+        margin-top: -0.2%;
+    }
+    .text .values i{
+        font-size: 1.5rem;
+    }
+    #remove button{
+        font-size: 0.85rem;
+    }
+}
+@media only screen and (min-width: 1400px){
+    i{
+        font-size: 6rem;
+    }
+    .container{
+        width: 70%;
+    }
+    .container i{
+        font-size: 2.5rem;
+    }
+    .container input{
+        font-size: 2rem;
+    }
+    .container input::placeholder{
+        font-size: 1.9rem;
+    }
+    .text{
+        width: 50%;
+    }
+    .text .values .font{
+        font-size: 1.8rem;
+    }
+    .text .values i{
+        font-size: 2rem;
+    }
+    #remove button{
+        font-size: 1.5rem;
+    }
+}
