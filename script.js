@@ -2,6 +2,7 @@ let input = document.getElementById('ifld');
 let child = document.querySelector('.text');
 let add = document.getElementById('sbt');
 let rmv_all = document.getElementById('remove');
+let cnt = 0;
 
 if(input.value == ""){
     rmv_all.style.visibility = `hidden`;
@@ -29,11 +30,15 @@ const To_do = (event) => {
 
     rmv_all.style.visibility = `visible`;
     child.appendChild(todo_div);
+    cnt++;
     input.value = "";
 
     del_btn.addEventListener('click', () => {
         setTimeout(() => {
             child.removeChild(todo_div);
+            cnt--;
+            if(cnt == 0)
+                rmv_all.style.visibility = `hidden`;
         }, 300);
     })
 }
@@ -45,11 +50,4 @@ const Remove_All = () => {
         rmv_all.style.visibility = `hidden`;
         child.innerHTML = "";
     }, 300);
-}
-
-const load = () => {
-    let loading = document.getElementById('loading');
-    let body = document.getElementsByTagName("body")[0];
-        loading.style.display = `none`;
-        body.style.overflowY = `scroll`;
 }
