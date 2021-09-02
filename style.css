@@ -93,6 +93,7 @@ input:focus{
     cursor: pointer;
     transition: all 0.5s ease;
     animation: none;
+    text-shadow: none;
 }
 .container i:hover{
     color: khaki;
@@ -146,6 +147,7 @@ input:focus{
     right: 0%;
     transition: all 1s ease;
     animation: none;
+    text-shadow: none;
 }
 .text .values i:hover{
     cursor: pointer;
