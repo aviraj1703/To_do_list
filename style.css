@@ -44,7 +44,7 @@ i{
         transform: rotateY(45deg);
     }
     50%{
-        color: wheat;
+        color: whitesmoke;
         transform: rotateY(0deg);
     }
     100%{
@@ -124,6 +124,37 @@ input:focus{
     padding: 0.2% 1%;
     border-radius: 10px;
     margin: 1%;
+    transition: 0.5s ease;
+}
+.text .values:hover{
+    transform: scale(0.95);
+    box-shadow: -1px -1px 1.5px 1.5px rgb(226, 184, 135);
+}
+.text .fall_1{
+    animation: rotate_1 0.5s ease-in-out 50ms 1 forwards;
+}
+@keyframes rotate_1 {
+    from{
+        opacity: 1;
+        transform: translateY(0rem) rotateZ(0deg);
+    }
+    to{
+        opacity: 0;
+        transform: translateY(4rem) rotate(30deg) ;
+    }
+}
+.text .fall_2{
+    animation: rotate_2 0.5s ease-in-out 50ms 1 forwards;
+}
+@keyframes rotate_2 {
+    from{
+        opacity: 1;
+        transform: translateY(0rem) rotateZ(0deg);
+    }
+    to{
+        opacity: 0;
+        transform: translateY(4rem) rotateZ(-30deg);
+    }
 }
 .text .values .font{
     font-family: 'Vollkorn', serif;
@@ -135,6 +166,9 @@ input:focus{
     margin-left: 0%;
     width: 85%;
     word-wrap: break-word;
+}
+.text .values .font::first-letter{
+    text-transform: uppercase;
 }
 .text .values button{
     background-color: transparent;
@@ -169,7 +203,6 @@ input:focus{
     box-sizing: border-box;
     box-shadow: -0.5px -0.5px 0.5px 0.5px rgb(241, 241, 237);
     transition: all 0.5s ease;
-    /* visibility: hidden; */
 }
 #remove button:hover{
     color: honeydew;
