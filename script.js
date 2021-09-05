@@ -2,7 +2,8 @@ let input = document.getElementById('ifld');
 let child = document.querySelector('.text');
 let add = document.getElementById('sbt');
 let rmv_all = document.getElementById('remove');
-let cnt = 0;
+let cnt = 0; 
+let k = 1;
 
 if(input.value == ""){
     rmv_all.style.visibility = `hidden`;
@@ -25,6 +26,7 @@ const To_do = (event) => {
 
     if(input.value == ""){
         alert("Sorry, work list is empty :(");
+        if(i > -1)
         return;
     }
 
@@ -34,12 +36,24 @@ const To_do = (event) => {
     input.value = "";
 
     del_btn.addEventListener('click', () => {
+        let Rotate = del_btn.parentElement;
+        Rotate.style.transformOrigin = `${0}%`;
+        if(k == 1){
+            Rotate.style.transformOrigin = `${0}%`;
+            todo_div.classList.add('fall_1');
+        }
+        else{
+            Rotate.style.transformOrigin = `${100}%`;
+            todo_div.classList.add('fall_2');
+        }
+        k = -1*k;
         setTimeout(() => {
             child.removeChild(todo_div);
             cnt--;
-            if(cnt == 0)
+            if(cnt == 0){
                 rmv_all.style.visibility = `hidden`;
-        }, 300);
+                return;}
+        }, 600);
     })
 }
 add.addEventListener('click', To_do);
